@@ -80,9 +80,8 @@
     .nav-links a:hover::after { transform: translateX(-50%) scaleX(1); }
     .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
 
-    /* ✨ HERO SECTION DENGAN BACKGROUND FOTO */
+    /* Hero Section */
     #home {
-      /* Background foto + overlay gradient biru */
       background: 
         linear-gradient(135deg, rgba(0,40,85,0.85) 0%, rgba(0,74,173,0.7) 50%, rgba(0,198,255,0.6) 100%),
         url('https://i.ibb.co.com/Z1TzdqSc/1.jpg') center/cover no-repeat fixed;
@@ -97,28 +96,17 @@
       position: relative;
       overflow: hidden;
     }
-    
-    /* Animasi partikel halus */
     #home::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
+      content: ''; position: absolute; width: 100%; height: 100%;
       background: radial-gradient(circle at 20% 80%, rgba(0,198,255,0.15) 0%, transparent 50%),
                   radial-gradient(circle at 80% 20%, rgba(0,74,173,0.2) 0%, transparent 50%);
-      pointer-events: none;
-      animation: float 15s ease-in-out infinite;
+      pointer-events: none; animation: float 15s ease-in-out infinite;
     }
     @keyframes float {
       0%, 100% { transform: translate(0, 0); }
       50% { transform: translate(20px, -20px); }
     }
-
-    .hero-content {
-      max-width: 800px;
-      z-index: 2;
-      animation: fadeInUp 1s ease;
-    }
+    .hero-content { max-width: 800px; z-index: 2; animation: fadeInUp 1s ease; }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
@@ -126,16 +114,13 @@
     #home h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.5rem, 8vw, 4rem);
-      margin-bottom: 20px;
-      line-height: 1.2;
+      margin-bottom: 20px; line-height: 1.2;
       text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     }
     #home p {
       font-size: clamp(1.1rem, 3vw, 1.4rem);
-      margin-bottom: 40px;
-      opacity: 0.98;
-      max-width: 600px;
-      margin: 0 auto 40px;
+      margin-bottom: 40px; opacity: 0.98;
+      max-width: 600px; margin: 0 auto 40px;
       text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
     }
     .btn {
@@ -152,8 +137,7 @@
       box-shadow: 0 15px 40px rgba(0, 74, 173, 0.7);
     }
     .btn-outline {
-      background: transparent; border: 2px solid white;
-      margin-left: 15px;
+      background: transparent; border: 2px solid white; margin-left: 15px;
     }
     .btn-outline:hover { background: white; color: var(--primary); }
     .hero-stats {
@@ -188,7 +172,7 @@
       margin: 30px auto 60px; font-size: 1.1rem;
     }
 
-    /* Galeri - Overlay BIRU Enhanced */
+    /* Galeri Slider */
     #galeri { background: white; }
     .slider-container {
       max-width: 900px; margin: 0 auto;
@@ -196,54 +180,28 @@
       overflow: hidden; box-shadow: var(--shadow);
       background: var(--dark);
     }
-    .slides {
-      display: flex;
-      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .slide-item {
-      position: relative; width: 100%;
-      flex-shrink: 0; overflow: hidden;
-    }
+    .slides { display: flex; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .slide-item { position: relative; width: 100%; flex-shrink: 0; overflow: hidden; }
     .slide-item img {
-      width: 100%; height: 500px;
-      object-fit: cover; display: block;
-      transition: transform 0.5s ease;
-      background: #111;
+      width: 100%; height: 500px; object-fit: cover;
+      display: block; transition: transform 0.5s ease; background: #111;
     }
-    
-    /* ✨ OVERLAY WARNA BIRU (Customizable) */
     .slide-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        transparent 40%,
-        rgba(0, 50, 120, 0.35) 70%,    /* Biru gelap transparan */
-        rgba(0, 74, 173, 0.9) 100%      /* Biru primary solid */
-      );
-      pointer-events: none;
-      z-index: 1;
+      background: linear-gradient(to bottom, transparent 0%, transparent 40%,
+        rgba(0, 50, 120, 0.35) 70%, rgba(0, 74, 173, 0.9) 100%);
+      pointer-events: none; z-index: 1;
     }
-    
-    /* Vignette effect dengan nuansa biru */
     .slide-item::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        transparent 50%,
-        rgba(0, 50, 120, 0.5) 100%
-      );
-      opacity: 0; transition: opacity 0.4s ease;
-      pointer-events: none; z-index: 2;
+      background: radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0, 50, 120, 0.5) 100%);
+      opacity: 0; transition: opacity 0.4s ease; pointer-events: none; z-index: 2;
     }
     .slide-item:hover::before { opacity: 1; }
     .slide-item:hover img { transform: scale(1.05); }
-    
     .slide-caption {
       position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 50px 30px 25px; text-align: left;
-      z-index: 3;
+      padding: 50px 30px 25px; text-align: left; z-index: 3;
       background: linear-gradient(transparent, rgba(0,40,90,0.7));
       backdrop-filter: blur(3px);
     }
@@ -252,30 +210,24 @@
       text-shadow: 0 2px 15px rgba(0, 30, 80, 0.6);
     }
     .slide-caption p {
-      font-size: 0.95rem; opacity: 0.98;
-      color: rgba(255,255,255,0.98);
+      font-size: 0.95rem; opacity: 0.98; color: rgba(255,255,255,0.98);
       text-shadow: 0 1px 8px rgba(0, 30, 80, 0.5);
     }
     .slide-indicator {
       position: absolute; top: 15px; right: 15px;
-      background: rgba(0, 74, 173, 0.95);
-      color: white; padding: 5px 14px;
-      border-radius: 20px; font-size: 0.85rem;
-      font-weight: 600; z-index: 3;
-      backdrop-filter: blur(5px);
-      border: 2px solid rgba(0,198,255,0.5);
+      background: rgba(0, 74, 173, 0.95); color: white;
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 0.85rem; font-weight: 600; z-index: 3;
+      backdrop-filter: blur(5px); border: 2px solid rgba(0,198,255,0.5);
     }
     .slider-btn {
-      position: absolute; top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--primary);
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.95); color: var(--primary);
       width: 50px; height: 50px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       cursor: pointer; transition: var(--transition);
       border: none; font-size: 1.2rem;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-      z-index: 10;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); z-index: 10;
     }
     .slider-btn:hover {
       background: var(--primary); color: white;
@@ -284,21 +236,77 @@
     .prev { left: 20px; } .next { right: 20px; }
     .slider-dots {
       position: absolute; bottom: 20px; left: 50%;
-      transform: translateX(-50%);
-      display: flex; gap: 10px; z-index: 10;
+      transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;
     }
     .dot {
       width: 12px; height: 12px; border-radius: 50%;
       background: rgba(255, 255, 255, 0.5);
-      cursor: pointer; transition: var(--transition);
-      border: 2px solid transparent;
+      cursor: pointer; transition: var(--transition); border: 2px solid transparent;
     }
     .dot.active {
       background: white; border-color: var(--secondary);
-      transform: scale(1.2);
-      box-shadow: 0 0 15px rgba(0, 198, 255, 0.7);
+      transform: scale(1.2); box-shadow: 0 0 15px rgba(0, 198, 255, 0.7);
     }
     .dot:hover { background: rgba(255, 255, 255, 0.85); }
+
+    /* ✨ VIDEO SECTION - YouTube Shorts */
+    #video {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      position: relative;
+    }
+    .video-container {
+      max-width: 450px;
+      margin: 0 auto;
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      position: relative;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 177.78%; /* 9:16 aspect ratio for Shorts */
+      height: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .video-info {
+      padding: 20px;
+      text-align: left;
+    }
+    .video-info h3 {
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .video-info h3 i { color: #ff0000; }
+    .video-info p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .video-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--gradient);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
 
     /* Features */
     .features {
@@ -461,12 +469,14 @@
       .slider-btn { width: 40px; height: 40px; font-size: 1rem; }
       .prev { left: 10px; } .next { right: 10px; }
       section { padding: 70px 5%; }
+      .video-container { max-width: 100%; }
     }
     @media (max-width: 480px) {
       .slides img { height: 300px; }
       .slide-caption { padding: 30px 20px 20px; }
       .slide-caption h3 { font-size: 1.2rem; }
       .contact-wrapper { grid-template-columns: 1fr; }
+      .video-wrapper { padding-bottom: 170%; }
     }
   </style>
 </head>
@@ -484,18 +494,19 @@
     <div class="nav-links" id="navLinks">
       <a href="#home" class="active">Beranda</a>
       <a href="#galeri">Galeri</a>
+      <a href="#video">Video</a>
       <a href="#kontak">Kontak</a>
     </div>
   </nav>
 
-  <!-- ✨ Hero Section dengan Background Foto -->
+  <!-- Hero Section -->
   <section id="home">
     <div class="hero-content">
       <h1>Alumni SMK 2 Pancasila 1998</h1>
       <p>Merajut silaturahmi, mengabadikan kenangan, dan membangun jaringan untuk masa depan yang lebih cerah bersama angkatan '98.</p>
       <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
         <a href="#galeri" class="btn"><i class="fas fa-images"></i> Lihat Galeri</a>
-        <a href="#kontak" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hubungi Kami</a>
+        <a href="#video" class="btn btn-outline"><i class="fab fa-youtube"></i> Tonton Video</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item"><div class="stat-number">25+</div><div class="stat-label">Tahun Persaudaraan</div></div>
@@ -505,7 +516,7 @@
     </div>
   </section>
 
-  <!-- Galeri Section - FOTO BARU + OVERLAY BIRU -->
+  <!-- Galeri Section -->
   <section id="galeri">
     <h2 class="section-title">Galeri Kegiatan</h2>
     <p class="section-subtitle">Momen-momen berharga yang telah kita lalui bersama, dari reuni hingga kegiatan sosial.</p>
@@ -513,68 +524,68 @@
     <div class="slider-container">
       <div class="slides" id="slides">
         
-        <!-- Slide 1: DAHAR SARENG SEDEREK JALER -->
+        <!-- Slide 1 -->
         <div class="slide-item">
           <img src="https://i.ibb.co.com/yFVqS3Qp/DAHAR-SARENG-SEDEREK-JALER.png" alt="Dahar Sareng Sederék Jaler">
           <div class="slide-overlay"></div>
-          <div class="slide-indicator">1/3</div>
+          <div class="slide-indicator">1/6</div>
           <div class="slide-caption">
             <h3>🍽️ Dahar Sareng Sederék Jaler</h3>
             <p>Mangan bareng kanca-kanca lanang, guyub rukun kebak keakraban.</p>
           </div>
         </div>
         
-        <!-- Slide 2: KUMPUL DAHAR SARENG -->
+        <!-- Slide 2 -->
         <div class="slide-item">
           <img src="https://i.ibb.co.com/678dVgML/KUMPUL-DAHAR-SARENG.png" alt="Kumpul Dahar Sareng">
           <div class="slide-overlay"></div>
-          <div class="slide-indicator">2/3</div>
+          <div class="slide-indicator">2/6</div>
           <div class="slide-caption">
             <h3>🍽️ Kumpul Dahar Sareng</h3>
             <p>Berkumpul menikmati hidangan, sambil berbagi cerita dan kenangan masa sekolah.</p>
           </div>
         </div>
         
-        <!-- Slide 3: FOTO BERSAMA -->
+        <!-- Slide 3 -->
         <div class="slide-item">
           <img src="https://i.ibb.co.com/RpGRGbRT/FOTO-BERSAMA.png" alt="Foto Bersama Alumni">
           <div class="slide-overlay"></div>
-          <div class="slide-indicator">3/3</div>
+          <div class="slide-indicator">3/6</div>
           <div class="slide-caption">
             <h3>📸 Foto Bersama</h3>
             <p>Momen abadi angkatan '98, bukti persaudaraan yang tak lekang oleh waktu.</p>
           </div>
         </div>
 
-          <!-- Slide 4: SILATUROMI  -->
+        <!-- Slide 4 -->
         <div class="slide-item">
-          <img src="https://i.ibb.co.com/p6M8JrXc/SILATUROMI-1.png" alt="Silaturahmi Alumni ">
+          <img src="https://i.ibb.co.com/p6M8JrXc/SILATUROMI-1.png" alt="Silaturahmi Alumni">
           <div class="slide-overlay"></div>
-          <div class="slide-indicator">1/3</div>
+          <div class="slide-indicator">4/6</div>
           <div class="slide-caption">
-            <h3>🤝 Silaturahmi </h3>
+            <h3>🤝 Silaturahmi 1</h3>
             <p>Berkumpul kembali, berbagi cerita dan tawa bersama rekan satu angkatan.</p>
           </div>
         </div>
         
-        <!-- Slide 5: SILATUROHMI  -->
+        <!-- Slide 5 -->
         <div class="slide-item">
-          <img src="https://i.ibb.co.com/pjZR45dH/SILATUROHMI-3.png" alt="Silaturahmi Alumni ">
+          <img src="https://i.ibb.co.com/pjZR45dH/SILATUROHMI-3.png" alt="Silaturahmi Alumni">
           <div class="slide-overlay"></div>
-          <div class="slide-indicator">2/3</div>
+          <div class="slide-indicator">5/6</div>
           <div class="slide-caption">
-            <h3>🤝 Silaturahmi </h3>
+            <h3>🤝 Silaturahmi 2</h3>
             <p>Momen penuh kehangatan, mempererat tali persaudaraan yang telah terjalin sejak 1998.</p>
           </div>
         </div>
         
-        <!-- Slide 6: SILATUROHMI  -->
+        <!-- Slide 6 -->
         <div class="slide-item">
-          <img src="https://i.ibb.co.com/mV5cpX40/SILATUROHMI-2.png" alt="Silaturahmi Alumni ">
+          <img src="https://i.ibb.co.com/mV5cpX40/SILATUROHMI-2.png" alt="Silaturahmi Alumni">
           <div class="slide-overlay"></div>
-          <div class="slide-indicator">3/3</div>
+          <div class="slide-indicator">6/6</div>
           <div class="slide-caption">
-            <h3>🤝 Silaturahmi </h3>
+            <h3>🤝 Silaturahmi 3</h3>
             <p>Kebersamaan yang tak ternilai, mengenang masa lalu dan merencanakan masa depan.</p>
           </div>
         </div>
@@ -606,6 +617,29 @@
         <div class="feature-icon"><i class="fas fa-database"></i></div>
         <h3>Database Alumni</h3>
         <p>Akses informasi kontak dan profil rekan satu angkatan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✨ Video Section - YouTube Shorts -->
+  <section id="video">
+    <h2 class="section-title">Video Shorts</h2>
+    <p class="section-subtitle">Saksikan momen seru angkatan '98 dalam format video pendek yang inspiratif.</p>
+    
+    <div class="video-container fade-in">
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/H7y5Zwq45_Q?rel=0&modestbranding=1" 
+          title="YouTube Shorts - Alumni SMK 2 Pancasila 1998"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="video-info">
+        <span class="video-badge"><i class="fab fa-youtube"></i> YouTube Shorts</span>
+        <h3><i class="fas fa-play-circle"></i> Kenangan Angkatan '98</h3>
+        <p>Kumpulan momen terbaik dari kegiatan silaturahmi alumni SMK 2 Pancasila tahun 1998. Dari tawa, cerita, hingga doa bersama — semua terabadikan dalam video pendek ini.</p>
       </div>
     </div>
   </section>
@@ -642,7 +676,7 @@
         <div class="social-links">
           <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://youtube.com/shorts/H7y5Zwq45_Q" title="YouTube Shorts" target="_blank"><i class="fab fa-youtube"></i></a>
           <a href="https://wa.me/6285336134894" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
